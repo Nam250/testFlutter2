@@ -12,6 +12,19 @@ class Question extends StatefulWidget{
 
 class _Question extends State<Question>{
   Widget build(context){
-    return Text("typeshit");
+    return SizedBox(
+      width: double.infinity,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+        Text('Question is...'),
+        SizedBox(height: 30,),
+        ElevatedButton(onPressed: (){}, child: Text('Answer 1')),
+        ElevatedButton(onPressed: (){}, child: Text('Answer 2')),
+        ElevatedButton(onPressed: (){}, child: Text('Answer 3')),
+        ElevatedButton(onPressed: (){}, child: Text('Answer 4')),
+      
+      ]),
+    );
   }
 }
