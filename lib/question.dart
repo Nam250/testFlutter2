@@ -1,4 +1,7 @@
+import 'package:adv_basics/data/question_data.dart';
 import 'package:flutter/material.dart';
+import 'package:adv_basics/answer_button.dart';
+import 'package:adv_basics/models/quiz_question.dart';
 
 class Question extends StatefulWidget{
   const Question({super.key});
@@ -12,17 +15,17 @@ class Question extends StatefulWidget{
 
 class _Question extends State<Question>{
   Widget build(context){
+
+     final currentquestion = questions[0];
     return SizedBox(
       width: double.infinity,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-        Text('Question is...'),
+        Text(currentquestion.text),
         SizedBox(height: 30,),
-        ElevatedButton(onPressed: (){}, child: Text('Answer 1')),
-        ElevatedButton(onPressed: (){}, child: Text('Answer 2')),
-        ElevatedButton(onPressed: (){}, child: Text('Answer 3')),
-        ElevatedButton(onPressed: (){}, child: Text('Answer 4')),
+        ...currentquestion.answer.map((answer) => AnswerButton(answerText: answer, onTap: (){})),
+        
       
       ]),
     );
